@@ -294,7 +294,7 @@ function Wireframe({
 }) {
 	const windowWidth = useWindowWidth();
 
-	if (!windowWidth) {
+	if (windowWidth === null) {
 		return null;
 	}
 
