@@ -493,7 +493,7 @@ function WireframeSidebarHeader({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			className={cn("flex-none", className)}
+			className={cn("h-(--top-nav-height) flex-none", className)}
 			data-slot="sidebar-header"
 			{...props}
 		>
@@ -544,7 +544,7 @@ function WireframeSidebarFooter({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			className={cn("flex-none", className)}
+			className={cn("h-(--bottom-nav-height) flex-none", className)}
 			data-slot="sidebar-footer"
 			{...props}
 		>
