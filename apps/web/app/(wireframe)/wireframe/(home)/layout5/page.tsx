@@ -4,7 +4,7 @@ import { StickyNav } from "@/components/wireframe/sticky-nav";
 export default function Page() {
 	return (
 		<div className="bg-(image:--crossed-gradient)">
-			<div className="bg-(image:--crossed-gradient) flex h-20 w-full items-center justify-center bg-green-600/40">
+			<div className="bg-(image:--crossed-gradient) flex h-(--top-nav-height) w-full items-center justify-center bg-green-600/40">
 				<div className="border-2 border-foreground bg-background px-2 font-bold">
 					HEADER
 				</div>

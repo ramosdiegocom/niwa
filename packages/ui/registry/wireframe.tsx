@@ -8,7 +8,7 @@ const defaults = {
 	mobileBreakpoint: 768,
 	safeAreas: true,
 	cssVariables: {
-		"--sticky-nav-height": 12,
+		"--sticky-nav-height": 14,
 		"--sticky-nav-top-offset": 0,
 
 		"--top-nav-height": 14,
