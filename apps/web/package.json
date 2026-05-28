@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "portless web next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "capture:text": "bun run scripts/capture-og.ts text",
