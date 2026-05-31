@@ -32,7 +32,7 @@ const links = [
 	},
 	{
 		label: "Email",
-		href: "mailto:diego@ramoz.dev",
+		href: "mailto:m@diegolosramos.com",
 		external: false,
 		icon: MailIcon,
 	},

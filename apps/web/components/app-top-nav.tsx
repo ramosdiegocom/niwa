@@ -43,7 +43,7 @@ export function AppTopNav() {
 				</a>
 				<a
 					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="mailto:diego@ramoz.dev"
+					href="mailto:m@diegolosramos.com"
 				>
 					Email
 				</a>
