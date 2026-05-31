@@ -21,6 +21,6 @@
   "menuColor": "default",
   "menuAccent": "subtle",
   "registries": {
-    "@ramoz": "https://ramoz.dev/r/{name}.json"
+    "@ramoz": "https://diegolosramos.com/r/{name}.json"
   }
 }

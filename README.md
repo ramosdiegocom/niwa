@@ -17,7 +17,7 @@ This setup achieves private inference because the LLM runs on a local machine, w
 
 **What's next:** The extraction performance can be improved with image compression (reduce payload size), and better PDF processing strategies. The economics only make sense at high volume, thousands of invoices per day, and that's exactly the target use case I'm validating.
 
-### `web` — [ramoz.dev](https://ramoz.dev)
+### `web` — [diegolosramos.com](https://diegolosramos.com)
 A frontend component showcase. I open-source the components I've built and refined across projects — starting with things like the `Wireframe` layout component. This app is intentionally frontend-only: no backend, just patterns and primitives worth sharing.
 
 ![Web app demo](apps/web/public/wireframe.gif)
