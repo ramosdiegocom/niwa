@@ -19,7 +19,7 @@ export function AppTopNav() {
 			<div className="flex items-center gap-1">
 				<a
 					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="https://linkedin.com/in/ramoz"
+					href="https://linkedin.com/in/diegolosramos"
 					rel="noopener noreferrer"
 					target="_blank"
 				>
@@ -35,7 +35,7 @@ export function AppTopNav() {
 				</a>
 				<a
 					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="https://x.com/zdiegoramos"
+					href="https://x.com/diegolosramos"
 					rel="noopener noreferrer"
 					target="_blank"
 				>
@@ -49,7 +49,7 @@ export function AppTopNav() {
 				</a>
 				<a
 					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="https://github.com/diegoramoz"
+					href="https://github.com/diegolosramos"
 					rel="noopener noreferrer"
 					target="_blank"
 				>

@@ -14,7 +14,7 @@ import { FaLinkedin } from "react-icons/fa";
 const links = [
 	{
 		label: "LinkedIn",
-		href: "https://linkedin.com/in/ramoz",
+		href: "https://linkedin.com/in/diegolosramos",
 		external: true,
 		icon: FaLinkedin,
 	},
@@ -26,7 +26,7 @@ const links = [
 	},
 	{
 		label: "X",
-		href: "https://x.com/zdiegoramos",
+		href: "https://x.com/diegolosramos",
 		external: true,
 		icon: SiX,
 	},
@@ -38,7 +38,7 @@ const links = [
 	},
 	{
 		label: "GitHub",
-		href: "https://github.com/diegoramoz",
+		href: "https://github.com/diegolosramos",
 		external: true,
 		icon: SiGithub,
 	},
