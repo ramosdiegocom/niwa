@@ -12,8 +12,7 @@
     "./postcss.config": "./postcss.config.mjs"
   },
   "scripts": {
-    "check-types": "tsc --noEmit",
-    "registry:build": "shadcn build --output ../../apps/web/public/r"
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",

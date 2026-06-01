@@ -1,18 +1,19 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "Diego Ramos",
-  "homepage": "https://diegolosramos.com",
+  "homepage": "https://github.com/diegolosramos/niwa",
   "items": [
     {
       "name": "wireframe",
-      "type": "registry:component",
+      "type": "registry:item",
       "title": "Wireframe",
       "description": "A component system for building fixed/sticky navigation layouts with automatic content spacing.",
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/wireframe.tsx",
-          "type": "registry:component"
+          "path": "packages/ui/components/wireframe.tsx",
+          "type": "registry:file",
+          "target": "~/components/ui/wireframe.tsx"
         }
       ]
     }
