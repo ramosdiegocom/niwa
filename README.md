@@ -1,26 +1,15 @@
 # Niwa 庭
 
-I built this to demonstrate how I approach full-stack engineering as a startup generalist, from database schema design to infrastructure to UI. Every decision here reflects how I'd build a production-grade full-stack application: end-to-end type safety, secure infrastructure, and clean separation of concerns across a monorepo.
-
-- [finance.zdiego.com](https://finance.zdiego.com) — AI-powered invoice scanner and expense dashboard
-
----
-
 ## Apps
 
-### `finance` — [finance.zdiego.com](https://finance.zdiego.com)
-A fully functional demo of an AI invoice scanner. Users submit their invoices on finance.zdiego.com and an ollama vision LLM extracts structured data from it. Turning pdfs/images into a queryable database.
+### `finance`
+A fully functional demo of an AI invoice scanner. Users submit their invoices and an ollama vision LLM extracts structured data from it. Turning pdfs/images into a queryable database.
 
 This setup achieves private inference because the LLM runs on a local machine, which is exposed to the internet using a Cloudflare Tunnel + Zero Trust Access.
 
 ![Finance app demo](apps/finance/public/finance.gif)
 
 **What's next:** The extraction performance can be improved with image compression (reduce payload size), and better PDF processing strategies. The economics only make sense at high volume, thousands of invoices per day, and that's exactly the target use case I'm validating.
-
-### `web` — [diegolosramos.com](https://diegolosramos.com)
-A frontend component showcase. I open-source the components I've built and refined across projects — starting with things like the `Wireframe` layout component. This app is intentionally frontend-only: no backend, just patterns and primitives worth sharing.
-
-![Web app demo](apps/web/public/wireframe.gif)
 
 ---
 
@@ -54,22 +43,4 @@ A frontend component showcase. I open-source the components I've built and refin
 - [Resend](https://resend.com) + [React Email](https://react.email) — transactional email
 - [Polar](https://polar.sh) — billing
 
----
 
-## Packages
-
-| Package | Description |
-|---|---|
-| `api` | oRPC router — widgets, users, invoices, credit cards, addresses, bugs, plans, ping, ollama |
-| `auth` | Better Auth config with passkey plugin |
-| `db` | Drizzle schema + Neon client. Tables use a bigint internal PK and a public nanoId — the bigint never leaves the server |
-| `ui` | Shared component library |
-| `llm` | Starts Ollama locally and exposes it via a Cloudflare Tunnel with Zero Trust auth |
-| `local-machine` | A minimal Bun HTTP server used to learn and validate the Cloudflare Tunnel setup before applying it to `llm` |
-| `env` | Type-safe environment variables |
-| `config` | Shared TypeScript and tooling config |
-| `shared` | Shared utilities — input validation presets, metadata, allowed character sets |
-
----
-
-Created by [Diego](https://zdiego.com)
