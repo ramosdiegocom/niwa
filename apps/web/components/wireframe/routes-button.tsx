@@ -1,44 +1,54 @@
 "use client";
 
-import { buttonVariants } from "@oss/ui/components/button";
-import { ButtonGroup } from "@oss/ui/components/button-group";
-import { Code2, Github, LayoutGrid } from "lucide-react";
+import { Button } from "@oss/ui/components/button";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@oss/ui/components/dropdown-menu";
+import { Code2, ExternalLink, Github, LayoutGrid, Menu } from "lucide-react";
 import Link from "next/link";
 
 export function RoutesButton() {
 	return (
-		<div className="fixed right-[calc(env(safe-area-inset-right)+1rem)] bottom-[calc(env(safe-area-inset-bottom)+1rem)] z-1000 inline-flex items-center">
-			<ButtonGroup>
-				<Link
-					aria-label="Open playground"
-					className={buttonVariants({ size: "lg" })}
-					data-slot="button"
-					href="/wireframe/playground"
-				>
-					<Code2 />
-					Playground
-				</Link>
-				<Link
-					aria-label="Open layouts"
-					className={buttonVariants({ size: "lg" })}
-					data-slot="button"
-					href="/wireframe"
-				>
-					<LayoutGrid />
-					Layout
-				</Link>
-				<Link
-					aria-label="View on GitHub"
-					className={buttonVariants({ size: "lg" })}
-					data-slot="button"
-					href="https://github.com/diegoramoz/wireframe"
-					rel="noopener noreferrer"
-					target="_blank"
-				>
-					<Github />
-					GitHub
-				</Link>
-			</ButtonGroup>
+		<div className="fixed right-[calc(env(safe-area-inset-right)+1rem)] bottom-[calc(env(safe-area-inset-bottom)+1rem)] z-1000">
+			<DropdownMenu>
+				<DropdownMenuTrigger
+					render={
+						<Button
+							aria-label="Open wireframe routes"
+							size="icon-lg"
+							type="button"
+						>
+							<Menu />
+						</Button>
+					}
+				/>
+				<DropdownMenuContent align="end" side="top">
+					<DropdownMenuItem render={<Link href="/wireframe/playground" />}>
+						<Code2 />
+						Playground
+					</DropdownMenuItem>
+					<DropdownMenuItem render={<Link href="/wireframe" />}>
+						<LayoutGrid />
+						Layout
+					</DropdownMenuItem>
+					<DropdownMenuItem
+						render={
+							<Link
+								href="https://github.com/diegoramoz/wireframe"
+								rel="noopener noreferrer"
+								target="_blank"
+							/>
+						}
+					>
+						<Github />
+						GitHub
+						<ExternalLink />
+					</DropdownMenuItem>
+				</DropdownMenuContent>
+			</DropdownMenu>
 		</div>
 	);
 }
