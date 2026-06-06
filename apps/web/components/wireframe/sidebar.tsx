@@ -40,7 +40,7 @@ export function Sidebar({ hideOn }: { hideOn?: "mobile" | "desktop" }) {
 			<WireframeSidebarHeader>
 				<div
 					className={cn(
-						"flex h-full w-full items-center border-zinc-900/70 border-b-2 bg-orange-200/85 px-2 transition-all duration-300 ease-out",
+						"flex h-full w-full items-center border-zinc-900/70 border-b-2 bg-blue-200/85 px-2 transition-all duration-300 ease-out",
 						collapsed ? "justify-center" : "justify-between"
 					)}
 				>
@@ -69,7 +69,7 @@ export function Sidebar({ hideOn }: { hideOn?: "mobile" | "desktop" }) {
 				</div>
 			</WireframeSidebarHeader>
 			<WireframeSidebarContent>
-				<div className="flex min-h-full w-full flex-col items-center justify-center bg-orange-100/90 px-2">
+				<div className="flex min-h-full w-full flex-col items-center justify-center bg-blue-100/90 px-2">
 					<div
 						className={cn(
 							"flex items-center justify-center overflow-hidden rounded-xl border-2 border-zinc-900/30 border-dashed bg-white/45 transition-all duration-300",
@@ -90,7 +90,7 @@ export function Sidebar({ hideOn }: { hideOn?: "mobile" | "desktop" }) {
 			<WireframeSidebarFooter>
 				<div
 					className={cn(
-						"flex h-full w-full items-center border-zinc-900/70 border-t-2 bg-orange-200/85 px-2 transition-all duration-300 ease-out",
+						"flex h-full w-full items-center border-zinc-900/70 border-t-2 bg-blue-200/85 px-2 transition-all duration-300 ease-out",
 						collapsed ? "justify-center" : "justify-between"
 					)}
 				>

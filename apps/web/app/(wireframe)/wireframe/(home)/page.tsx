@@ -38,7 +38,7 @@ export default function NavigationPage() {
 									</p>
 								</div>
 								<div className="flex items-center gap-2">
-									<ShellTag className="h-7 border-zinc-700/80 bg-amber-50 px-2 text-[10px] tracking-[0.12em]">
+									<ShellTag className="h-7 border-zinc-700/80 bg-blue-50 px-2 text-[10px] tracking-[0.12em]">
 										{item.preview}
 									</ShellTag>
 								</div>

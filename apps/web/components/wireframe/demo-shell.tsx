@@ -70,7 +70,7 @@ export function WireframeContentScaffold({
 			<div className="grid gap-4 sm:grid-cols-3">
 				{["Overview", "Panels", "States"].map((label) => (
 					<div
-						className="rounded-xl border-2 border-zinc-900/70 bg-linear-to-br from-amber-50 via-cyan-50 to-blue-50 p-3"
+						className="rounded-xl border-2 border-zinc-900/70 bg-linear-to-br from-green-50 via-purple-50 to-blue-50 p-3"
 						key={label}
 					>
 						<div className="mb-3 h-2 w-20 rounded-full bg-zinc-700/80" />

@@ -65,7 +65,7 @@ export function HeaderStickySidebarScene() {
 			tags={["Header", "Sticky Nav", "Sidebar"]}
 			title="Header + Sticky Layers"
 		>
-			<div className="flex h-(--top-nav-height) w-full items-center justify-center border-zinc-900/80 border-b-2 bg-teal-300/85">
+			<div className="flex h-(--top-nav-height) w-full items-center justify-center border-zinc-900/80 border-b-2 bg-green-300/85">
 				<ShellTag>Header</ShellTag>
 			</div>
 			<StickyNav />
@@ -95,7 +95,7 @@ export function NestedScrollScene() {
 	return (
 		<WireframeShell>
 			<WireframeNav position="top">
-				<div className="flex h-full items-center justify-center border-zinc-900/80 border-b-2 bg-amber-200/90 px-4">
+				<div className="flex h-full items-center justify-center border-zinc-900/80 border-b-2 bg-green-200/90 px-4">
 					<ShellTag>Top Nav</ShellTag>
 				</div>
 			</WireframeNav>
@@ -114,9 +114,9 @@ export function NestedScrollScene() {
 				</WireframeSurface>
 
 				<section className="h-144 space-y-5 overflow-y-auto rounded-2xl border-2 border-zinc-900/80 bg-white/85 p-4 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.75)] sm:p-6">
-					<div className="h-56 space-y-4 overflow-y-auto rounded-xl border-2 border-zinc-900/75 bg-linear-to-br from-sky-50 to-cyan-50 p-4">
+					<div className="h-56 space-y-4 overflow-y-auto rounded-xl border-2 border-zinc-900/75 bg-linear-to-br from-green-50 to-blue-50 p-4">
 						<div className="flex items-center gap-2">
-							<ShellTag className="h-7 bg-sky-100 px-2 text-[10px]">
+							<ShellTag className="h-7 bg-green-100 px-2 text-[10px]">
 								Region A
 							</ShellTag>
 						</div>
@@ -136,7 +136,7 @@ export function NestedScrollScene() {
 							</ShellTag>
 						</div>
 						<div className="h-40 space-y-3 overflow-y-auto rounded-lg border-2 border-zinc-900/65 bg-white/80 p-3">
-							<ShellTag className="h-7 bg-amber-100 px-2 text-[10px]">
+							<ShellTag className="h-7 bg-purple-100 px-2 text-[10px]">
 								Deep Region
 							</ShellTag>
 							{deepRegionBars.map((bar) => (
@@ -156,9 +156,9 @@ export function NestedScrollScene() {
 						))}
 					</div>
 
-					<div className="overflow-x-auto rounded-xl border-2 border-zinc-900/75 bg-linear-to-br from-orange-50 to-rose-50 p-4">
+					<div className="overflow-x-auto rounded-xl border-2 border-zinc-900/75 bg-linear-to-br from-blue-50 to-red-50 p-4">
 						<div className="mb-3">
-							<ShellTag className="h-7 bg-orange-100 px-2 text-[10px]">
+							<ShellTag className="h-7 bg-red-100 px-2 text-[10px]">
 								Horizontal Region
 							</ShellTag>
 						</div>

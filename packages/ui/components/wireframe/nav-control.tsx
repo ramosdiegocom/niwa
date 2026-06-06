@@ -32,7 +32,7 @@ export function NavControl({
 			case "sticky":
 				return (
 					<div className="flex size-full flex-col">
-						<div className="h-[25%] w-full bg-rose-500" />
+						<div className="h-[25%] w-full bg-red-500" />
 						<div className="h-[75%] w-full" />
 					</div>
 				);

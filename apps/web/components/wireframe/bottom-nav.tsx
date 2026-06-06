@@ -6,7 +6,7 @@ export function BottomNav(
 ) {
 	return (
 		<WireframeNav position="bottom" {...props}>
-			<div className="flex h-full w-full items-center justify-center border-zinc-900/85 border-t-2 bg-sky-300/85 px-4">
+			<div className="flex h-full w-full items-center justify-center border-zinc-900/85 border-t-2 bg-purple-300/85 px-4">
 				<div className="flex h-full w-full items-center justify-center">
 					<ShellTag>Bottom Nav</ShellTag>
 				</div>
