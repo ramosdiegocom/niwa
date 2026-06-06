@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-	ShellTag,
 	WireframeShell,
 	WireframeSurface,
 } from "@/components/wireframe/demo-shell";
@@ -12,15 +11,8 @@ export default function NavigationPage() {
 		<WireframeShell>
 			<main className="mx-auto max-w-6xl p-4 sm:p-8">
 				<WireframeSurface className="mb-6 space-y-4 sm:mb-8">
-					<div className="flex items-center justify-between gap-3">
-						<ShellTag>Wireframe</ShellTag>
-						<div className="hidden items-center gap-2 sm:flex">
-							<ShellTag className="border-zinc-700/70">Patterns</ShellTag>
-							<ShellTag className="border-zinc-700/70">Layouts</ShellTag>
-						</div>
-					</div>
 					<h1 className="font-black text-2xl tracking-tight sm:text-4xl">
-						Wireframe Route Gallery
+						Wireframe Gallery
 					</h1>
 				</WireframeSurface>
 

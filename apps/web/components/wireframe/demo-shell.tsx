@@ -2,12 +2,7 @@ import { cn } from "@oss/ui/lib/utils";
 import type { ReactNode } from "react";
 
 export function WireframeShell({ children }: { children: ReactNode }) {
-	return (
-		<div className="bg-[radial-gradient(circle_at_0%_0%,#fef3c7,transparent_45%),radial-gradient(circle_at_100%_100%,#f5f5f4,transparent_50%),linear-gradient(160deg,#fffbeb_0%,#f8fafc_45%,#fefce8_100%)]">
-			<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.15)_1px,transparent_1px)] bg-size-[24px_24px] opacity-45" />
-			<div className="relative">{children}</div>
-		</div>
-	);
+	return <div className="relative">{children}</div>;
 }
 
 export function WireframeSurface({
