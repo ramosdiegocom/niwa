@@ -4,7 +4,8 @@ export type RoutePreviewKind =
 	| "sticky-sidebar-bottom"
 	| "top-bottom"
 	| "header-sticky-sidebar"
-	| "sticky-layers";
+	| "sticky-layers"
+	| "playground";
 
 export type RouteCatalogItem = {
 	href: string;
@@ -14,6 +15,13 @@ export type RouteCatalogItem = {
 };
 
 export const routeCatalog = [
+	{
+		href: "/playground",
+		title: "Playground",
+		description:
+			"Interactive controls for tuning wireframe shell, navigation, and content layout options before copying the generated code.",
+		preview: "playground",
+	},
 	{
 		href: "/layout2",
 		title: "Layout 2",
