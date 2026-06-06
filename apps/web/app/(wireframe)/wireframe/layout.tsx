@@ -1,5 +1,3 @@
-'use client"';
-
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { RoutesButton } from "@/components/wireframe/routes-button";

@@ -2,36 +2,23 @@ import {
 	WireframeSidebar,
 	WireframeSidebarContent,
 	WireframeSidebarFooter,
-	WireframeSidebarHeader,
 } from "@oss/ui/components/wireframe";
+import { ShellTag } from "@/components/wireframe/demo-shell";
 
 export function SidebarStatic() {
 	return (
-		<WireframeSidebar collapsed={false} position="left">
-			<WireframeSidebarHeader>
-				<div className="bg-(image:--crossed-gradient) flex h-full w-full items-center justify-center bg-lime-500/40">
-					<div className="flex h-full items-center justify-center">
-						<div className="border-2 border-foreground bg-background px-2 font-bold">
-							Header
-						</div>
-					</div>
-				</div>
-			</WireframeSidebarHeader>
+		<WireframeSidebar collapsed={false} hideOn="mobile" position="left">
 			<WireframeSidebarContent>
-				<div className="bg-(image:--crossed-gradient) flex min-h-full w-full items-center justify-center bg-lime-500/40">
+				<div className="flex min-h-full w-full items-center justify-center bg-teal-100/90">
 					<div className="flex h-full items-center justify-center">
-						<div className="border-2 border-foreground bg-background px-2 font-bold">
-							Sidebar
-						</div>
+						<ShellTag>Sidebar</ShellTag>
 					</div>
 				</div>
 			</WireframeSidebarContent>
 			<WireframeSidebarFooter>
-				<div className="bg-(image:--crossed-gradient) flex h-full w-full items-center justify-center bg-lime-500/40">
+				<div className="flex h-full w-full items-center justify-center border-zinc-900/70 border-t-2 bg-teal-200/85">
 					<div className="flex h-full items-center justify-center">
-						<div className="border-2 border-foreground bg-background px-2 font-bold">
-							Footer
-						</div>
+						<ShellTag>Footer</ShellTag>
 					</div>
 				</div>
 			</WireframeSidebarFooter>

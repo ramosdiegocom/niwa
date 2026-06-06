@@ -1,4 +1,3 @@
-import { Wireframe } from "@oss/ui/components/wireframe";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,5 +9,5 @@ export const metadata: Metadata = {
 export default function Layout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
-	return <Wireframe className="bg-amber-200">{children}</Wireframe>;
+	return <div>{children}</div>;
 }

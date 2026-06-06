@@ -1,12 +1,11 @@
 import { WireframeStickyNav } from "@oss/ui/components/wireframe";
+import { ShellTag } from "@/components/wireframe/demo-shell";
 
 export function StickyNav() {
 	return (
 		<WireframeStickyNav>
-			<div className="bg-(image:--crossed-gradient) flex h-full w-full items-center justify-center bg-fuchsia-500/40">
-				<div className="border-2 border-foreground bg-background px-2 font-bold">
-					STICKY NAV
-				</div>
+			<div className="flex h-full w-full items-center justify-center border-zinc-900/80 border-b-2 bg-teal-200/90 px-4">
+				<ShellTag>Sticky Nav</ShellTag>
 			</div>
 		</WireframeStickyNav>
 	);
