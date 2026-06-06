@@ -418,11 +418,31 @@ function Wireframe({
 	);
 }
 
+type WireframeHideOn = "mobile" | "desktop";
+
+function shouldHideOnBreakpoint(
+	hideOn: WireframeHideOn | undefined,
+	isMobile: boolean
+) {
+	return (
+		(hideOn === "mobile" && isMobile === true) ||
+		(hideOn === "desktop" && isMobile === false)
+	);
+}
+
 function WireframeStickyNav({
 	className,
 	children,
+	hideOn,
 	...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<"div"> & {
+	hideOn?: WireframeHideOn;
+}) {
+	const { isMobile } = useWireframe();
+	if (shouldHideOnBreakpoint(hideOn, isMobile)) {
+		return null;
+	}
+
 	return (
 		<div
 			className={cn(
@@ -445,13 +465,10 @@ function WireframeNav({
 	...props
 }: React.ComponentProps<"div"> & {
 	position?: "top" | "bottom";
-	hideOn?: "mobile" | "desktop";
+	hideOn?: WireframeHideOn;
 }) {
 	const { isMobile } = useWireframe();
-	if (hideOn === "mobile" && isMobile) {
-		return null;
-	}
-	if (hideOn === "desktop" && !isMobile) {
+	if (shouldHideOnBreakpoint(hideOn, isMobile)) {
 		return null;
 	}
 
@@ -563,13 +580,10 @@ function WireframeSidebar({
 }: React.ComponentProps<"div"> & {
 	collapsed?: boolean;
 	position?: WireframeSidebarPosition;
-	hideOn?: "mobile" | "desktop";
+	hideOn?: WireframeHideOn;
 }) {
 	const { isMobile } = useWireframe();
-	if (hideOn === "mobile" && isMobile) {
-		return null;
-	}
-	if (hideOn === "desktop" && !isMobile) {
+	if (shouldHideOnBreakpoint(hideOn, isMobile)) {
 		return null;
 	}
 	return (
@@ -616,6 +630,7 @@ export {
 	SafeAreaInsetTop,
 	useWindowWidth,
 	Wireframe,
+	type WireframeHideOn,
 	WireframeNav,
 	WireframeSidebar,
 	WireframeSidebarContent,

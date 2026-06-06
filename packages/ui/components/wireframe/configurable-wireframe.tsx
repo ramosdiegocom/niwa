@@ -6,11 +6,23 @@ import { cn } from "../../lib/utils";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip";
 import {
 	Wireframe,
+	type WireframeHideOn,
 	WireframeNav,
 	WireframeSidebar,
 	WireframeStickyNav,
 } from "../wireframe";
+import type { WireframeHideOnOption } from "./wireframe-config-provider";
 import { useWireframeConfig } from "./wireframe-config-provider";
+
+function getHideOnProp(
+	value: WireframeHideOnOption
+): WireframeHideOn | undefined {
+	return value === "none" ? undefined : value;
+}
+
+function formatHideOnAttribute(hideOn: WireframeHideOn | undefined) {
+	return hideOn ? ` hideOn="${hideOn}"` : "";
+}
 
 function ComponentName({ title, code }: { title: string; code: string }) {
 	return (
@@ -29,20 +41,22 @@ function ComponentName({ title, code }: { title: string; code: string }) {
 
 function DemoSidebar({
 	collapsed,
+	hideOn,
 	onToggle,
 	position,
 }: {
 	collapsed: boolean;
+	hideOn?: WireframeHideOn;
 	onToggle: () => void;
 	position: "left" | "right";
 }) {
 	const isLeft = position === "left";
 	const title = isLeft ? "Left Sidebar" : "Right Sidebar";
-	const code = `<WireframeSidebar position="${position}" collapsed={false} />`;
+	const code = `<WireframeSidebar position="${position}" collapsed={false}${formatHideOnAttribute(hideOn)} />`;
 	const toggleArrow = isLeft === collapsed ? "→" : "←";
 
 	return (
-		<WireframeSidebar collapsed={collapsed} position={position}>
+		<WireframeSidebar collapsed={collapsed} hideOn={hideOn} position={position}>
 			<div className="min-h-full bg-blue-200 p-4 dark:bg-blue-900">
 				<div
 					className={cn(
@@ -74,6 +88,11 @@ export function ConfigurableWireframe({
 	const { config } = useWireframeConfig();
 	const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(false);
 	const [rightSidebarCollapsed, setRightSidebarCollapsed] = useState(false);
+	const topNavHideOn = getHideOnProp(config.topNavHideOn);
+	const bottomNavHideOn = getHideOnProp(config.bottomNavHideOn);
+	const stickyNavHideOn = getHideOnProp(config.stickyNavHideOn);
+	const leftSidebarHideOn = getHideOnProp(config.leftSidebarHideOn);
+	const rightSidebarHideOn = getHideOnProp(config.rightSidebarHideOn);
 
 	return (
 		<Wireframe
@@ -87,20 +106,20 @@ export function ConfigurableWireframe({
 			{config.navType === "normal" && (
 				<>
 					{config.showTopNav && (
-						<WireframeNav position="top">
+						<WireframeNav hideOn={topNavHideOn} position="top">
 							<div className="flex h-full items-center justify-center bg-green-200 px-4 dark:bg-green-900">
 								<ComponentName
-									code={`<WireframeNav position="top"/>`}
+									code={`<WireframeNav position="top"${formatHideOnAttribute(topNavHideOn)} />`}
 									title="Top Navigation"
 								/>
 							</div>
 						</WireframeNav>
 					)}
 					{config.showBottomNav && (
-						<WireframeNav position="bottom">
+						<WireframeNav hideOn={bottomNavHideOn} position="bottom">
 							<div className="flex h-full items-center justify-center bg-purple-200 px-4 dark:bg-purple-900">
 								<ComponentName
-									code={`<WireframeNav position="bottom"/>`}
+									code={`<WireframeNav position="bottom"${formatHideOnAttribute(bottomNavHideOn)} />`}
 									title="Bottom Navigation"
 								/>
 							</div>
@@ -110,9 +129,12 @@ export function ConfigurableWireframe({
 			)}
 
 			{config.navType === "sticky" && (
-				<WireframeStickyNav>
+				<WireframeStickyNav hideOn={stickyNavHideOn}>
 					<div className="flex h-full items-center justify-center bg-rose-200 px-4 dark:bg-rose-900">
-						<ComponentName code={"<StickyNav />"} title="Sticky Navigation" />
+						<ComponentName
+							code={`<WireframeStickyNav${formatHideOnAttribute(stickyNavHideOn)} />`}
+							title="Sticky Navigation"
+						/>
 					</div>
 				</WireframeStickyNav>
 			)}
@@ -120,6 +142,7 @@ export function ConfigurableWireframe({
 			{config.showLeftSidebar && (
 				<DemoSidebar
 					collapsed={leftSidebarCollapsed}
+					hideOn={leftSidebarHideOn}
 					onToggle={() => setLeftSidebarCollapsed(!leftSidebarCollapsed)}
 					position="left"
 				/>
@@ -128,6 +151,7 @@ export function ConfigurableWireframe({
 			{config.showRightSidebar && (
 				<DemoSidebar
 					collapsed={rightSidebarCollapsed}
+					hideOn={rightSidebarHideOn}
 					onToggle={() => setRightSidebarCollapsed(!rightSidebarCollapsed)}
 					position="right"
 				/>

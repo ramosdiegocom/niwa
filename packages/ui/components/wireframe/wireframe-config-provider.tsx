@@ -5,6 +5,7 @@ import { createContext, useContext, useState } from "react";
 import type { WireframeCSSVariables } from "../wireframe";
 
 type NavType = "normal" | "sticky";
+export type WireframeHideOnOption = "none" | "mobile" | "desktop";
 export type WireframeCornerOptions = "navbar" | "sidebar";
 
 export type WireframeConfig = {
@@ -13,6 +14,11 @@ export type WireframeConfig = {
 	showBottomNav: boolean;
 	showLeftSidebar: boolean;
 	showRightSidebar: boolean;
+	topNavHideOn: WireframeHideOnOption;
+	bottomNavHideOn: WireframeHideOnOption;
+	stickyNavHideOn: WireframeHideOnOption;
+	leftSidebarHideOn: WireframeHideOnOption;
+	rightSidebarHideOn: WireframeHideOnOption;
 	corners: {
 		topLeft: WireframeCornerOptions;
 		topRight: WireframeCornerOptions;
@@ -88,6 +94,11 @@ export function WireframeConfigProvider({
 		showBottomNav: false,
 		showLeftSidebar: true,
 		showRightSidebar: false,
+		topNavHideOn: "none",
+		bottomNavHideOn: "none",
+		stickyNavHideOn: "none",
+		leftSidebarHideOn: "none",
+		rightSidebarHideOn: "none",
 		corners: {
 			topLeft: "sidebar",
 			topRight: "sidebar",

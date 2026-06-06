@@ -1,13 +1,51 @@
 "use client";
 
 import { Label } from "../label";
+import { NativeSelect, NativeSelectOption } from "../native-select";
 import { CornerControl } from "./corner-control";
 import { NavControl } from "./nav-control";
 import { NavDiagramControl } from "./nav-diagram-control";
 import { SidebarControl } from "./sidebar-control";
 import { SidebarDiagramControl } from "./sidebar-diagram-control";
-import type { WireframeConfig } from "./wireframe-config-provider";
+import type {
+	WireframeConfig,
+	WireframeHideOnOption,
+} from "./wireframe-config-provider";
 import { useWireframeConfig } from "./wireframe-config-provider";
+
+const HIDE_ON_OPTIONS: Array<{ label: string; value: WireframeHideOnOption }> =
+	[
+		{ label: "Don't hide", value: "none" },
+		{ label: "Hide on mobile", value: "mobile" },
+		{ label: "Hide on desktop", value: "desktop" },
+	];
+
+type HideOnControlProps = {
+	label: string;
+	onChange: (value: WireframeHideOnOption) => void;
+	value: WireframeHideOnOption;
+};
+
+function HideOnControl({ label, onChange, value }: HideOnControlProps) {
+	return (
+		<div className="flex items-center justify-between gap-3 rounded-lg border border-border p-3">
+			<Label className="text-sm">{label}</Label>
+			<NativeSelect
+				onChange={(event) =>
+					onChange(event.target.value as WireframeHideOnOption)
+				}
+				size="sm"
+				value={value}
+			>
+				{HIDE_ON_OPTIONS.map((option) => (
+					<NativeSelectOption key={option.value} value={option.value}>
+						{option.label}
+					</NativeSelectOption>
+				))}
+			</NativeSelect>
+		</div>
+	);
+}
 
 type NavCornersSectionProps = {
 	config: WireframeConfig;
@@ -66,6 +104,12 @@ export function LayoutControlsPanel() {
 		useWireframeConfig();
 
 	const vars = config.cssVariables;
+	const hasVisibilityControls =
+		config.navType === "sticky" ||
+		(config.navType === "normal" &&
+			(config.showTopNav || config.showBottomNav)) ||
+		config.showLeftSidebar ||
+		config.showRightSidebar;
 
 	return (
 		<div className="space-y-6">
@@ -134,6 +178,49 @@ export function LayoutControlsPanel() {
 					</div>
 				</div>
 			</div>
+
+			{hasVisibilityControls && (
+				<div className="space-y-3">
+					<Label className="font-semibold text-sm">Responsive Visibility</Label>
+					<div className="grid gap-3 sm:grid-cols-2">
+						{config.navType === "normal" && config.showTopNav && (
+							<HideOnControl
+								label="Top Nav"
+								onChange={(value) => updateConfig("topNavHideOn", value)}
+								value={config.topNavHideOn}
+							/>
+						)}
+						{config.navType === "normal" && config.showBottomNav && (
+							<HideOnControl
+								label="Bottom Nav"
+								onChange={(value) => updateConfig("bottomNavHideOn", value)}
+								value={config.bottomNavHideOn}
+							/>
+						)}
+						{config.navType === "sticky" && (
+							<HideOnControl
+								label="Sticky Nav"
+								onChange={(value) => updateConfig("stickyNavHideOn", value)}
+								value={config.stickyNavHideOn}
+							/>
+						)}
+						{config.showLeftSidebar && (
+							<HideOnControl
+								label="Left Sidebar"
+								onChange={(value) => updateConfig("leftSidebarHideOn", value)}
+								value={config.leftSidebarHideOn}
+							/>
+						)}
+						{config.showRightSidebar && (
+							<HideOnControl
+								label="Right Sidebar"
+								onChange={(value) => updateConfig("rightSidebarHideOn", value)}
+								value={config.rightSidebarHideOn}
+							/>
+						)}
+					</div>
+				</div>
+			)}
 
 			{/* Nav Corners (for normal nav) */}
 			{config.navType === "normal" && (

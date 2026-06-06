@@ -4,7 +4,16 @@ import { Button } from "../button";
 import {
 	defaultCSSVariables,
 	useWireframeConfig,
+	type WireframeHideOnOption,
 } from "./wireframe-config-provider";
+
+function formatHideOnAttribute(value: WireframeHideOnOption) {
+	return value === "none" ? "" : ` hideOn="${value}"`;
+}
+
+function formatHideOnLine(value: WireframeHideOnOption) {
+	return value === "none" ? "" : `\n    hideOn="${value}"`;
+}
 
 export function CodePreview() {
 	const { config } = useWireframeConfig();
@@ -52,30 +61,29 @@ export function CodePreview() {
 			const navParts: string[] = [];
 			if (config.showTopNav) {
 				navParts.push(
-					`<WireframeNav position="top">\n    {/* children */}\n  </WireframeNav>`
+					`<WireframeNav position="top"${formatHideOnAttribute(config.topNavHideOn)}>\n    {/* children */}\n  </WireframeNav>`
 				);
 			}
 			if (config.showBottomNav) {
 				navParts.push(
-					`<WireframeNav position="bottom">\n    {/* children */}\n  </WireframeNav>`
+					`<WireframeNav position="bottom"${formatHideOnAttribute(config.bottomNavHideOn)}>\n    {/* children */}\n  </WireframeNav>`
 				);
 			}
 			navSegment = navParts.join("\n  ");
 		} else {
-			navSegment =
-				"<WireframeStickyNav>\n     {/* children */}\n  </WireframeStickyNav>";
+			navSegment = `<WireframeStickyNav${formatHideOnAttribute(config.stickyNavHideOn)}>\n     {/* children */}\n  </WireframeStickyNav>`;
 		}
 
 		const innerParts: string[] = [navSegment];
 
 		if (config.showLeftSidebar) {
 			innerParts.push(
-				`<WireframeSidebar\n    collapsed={leftSidebarCollapsed}\n    position="left"\n  >\n    {/* children */}\n  </WireframeSidebar>`
+				`<WireframeSidebar\n    collapsed={leftSidebarCollapsed}${formatHideOnLine(config.leftSidebarHideOn)}\n    position="left"\n  >\n    {/* children */}\n  </WireframeSidebar>`
 			);
 		}
 		if (config.showRightSidebar) {
 			innerParts.push(
-				`<WireframeSidebar\n    collapsed={rightSidebarCollapsed}\n    position="right"\n  >\n    {/* children */}\n  </WireframeSidebar>`
+				`<WireframeSidebar\n    collapsed={rightSidebarCollapsed}${formatHideOnLine(config.rightSidebarHideOn)}\n    position="right"\n  >\n    {/* children */}\n  </WireframeSidebar>`
 			);
 		}
 		innerParts.push("{/* children */}");
