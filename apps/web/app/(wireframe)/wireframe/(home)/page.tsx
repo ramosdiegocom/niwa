@@ -33,14 +33,6 @@ export default function NavigationPage() {
 									<h2 className="font-extrabold text-xl leading-tight">
 										{item.title}
 									</h2>
-									<p className="font-mono text-[11px] text-zinc-600 uppercase tracking-[0.16em]">
-										{item.href}
-									</p>
-								</div>
-								<div className="flex items-center gap-2">
-									<ShellTag className="h-7 border-zinc-700/80 bg-blue-50 px-2 text-[10px] tracking-[0.12em]">
-										{item.preview}
-									</ShellTag>
 								</div>
 							</article>
 						</Link>
