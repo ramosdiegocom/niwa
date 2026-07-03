@@ -35,21 +35,13 @@ export function AppTopNav() {
 				</a>
 				<a
 					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="https://x.com/diegolosramos"
-					rel="noopener noreferrer"
-					target="_blank"
-				>
-					X
-				</a>
-				<a
-					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="mailto:m@diegolosramos.com"
+					href="mailto:m@ramosdiego.com"
 				>
 					Email
 				</a>
 				<a
 					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="https://github.com/diegolosramos"
+					href="https://github.com/ramosdiegocom"
 					rel="noopener noreferrer"
 					target="_blank"
 				>

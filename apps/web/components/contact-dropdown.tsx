@@ -1,6 +1,6 @@
 "use client";
 
-import { SiGithub, SiX, SiYoutube } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiYoutube } from "@icons-pack/react-simple-icons";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -25,20 +25,14 @@ const links = [
 		icon: SiYoutube,
 	},
 	{
-		label: "X",
-		href: "https://x.com/diegolosramos",
-		external: true,
-		icon: SiX,
-	},
-	{
 		label: "Email",
-		href: "mailto:m@diegolosramos.com",
+		href: "mailto:m@ramosdiego.com",
 		external: false,
 		icon: MailIcon,
 	},
 	{
 		label: "GitHub",
-		href: "https://github.com/diegolosramos",
+		href: "https://github.com/ramosdiegocom",
 		external: true,
 		icon: SiGithub,
 	},
