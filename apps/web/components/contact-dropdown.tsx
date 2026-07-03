@@ -9,15 +9,8 @@ import {
 } from "@oss/ui/components/dropdown-menu";
 import { MailIcon } from "lucide-react";
 import type React from "react";
-import { FaLinkedin } from "react-icons/fa";
 
 const links = [
-	{
-		label: "LinkedIn",
-		href: "https://linkedin.com/in/diegolosramos",
-		external: true,
-		icon: FaLinkedin,
-	},
 	{
 		label: "YouTube",
 		href: "https://www.youtube.com/watch?v=x70d_rH55J8",
