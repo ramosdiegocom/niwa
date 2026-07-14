@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Text } from "@/app/text/text";
 
-const BASE_URL = "https://diegolosramos.com";
+const BASE_URL = "https://ramosdiego.com";
 
 export const metadata: Metadata = {
 	title: "Diego Ramos",

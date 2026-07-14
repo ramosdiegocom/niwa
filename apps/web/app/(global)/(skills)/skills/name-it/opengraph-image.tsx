@@ -54,7 +54,7 @@ export default async function Image() {
 						letterSpacing: "0.08em",
 					}}
 				>
-					diegolosramos.com/skills
+					ramosdiego.com/skills
 				</span>
 			</div>
 

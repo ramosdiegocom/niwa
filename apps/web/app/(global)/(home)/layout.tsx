@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-// const BASE_URL = "https://diegolosramos.com";
+// const BASE_URL = "https://ramosdiego.com";
 
 export const metadata: Metadata = {
 	// openGraph: {
