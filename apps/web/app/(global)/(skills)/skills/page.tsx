@@ -25,7 +25,7 @@ export default function SkillsPage() {
 				<h1 className="font-bold text-2xl">Skills</h1>
 				<a
 					className="flex items-center gap-1 text-muted-foreground text-sm hover:text-foreground"
-					href="https://github.com/diegoramoz/skills"
+					href="https://github.com/ramosdiegocom/skills"
 					rel="noopener noreferrer"
 					target="_blank"
 				>

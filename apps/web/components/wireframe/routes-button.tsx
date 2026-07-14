@@ -23,7 +23,7 @@ export function RoutesButton() {
 			<Link
 				aria-label="Open GitHub repository"
 				className={buttonVariants({ size: "icon-lg" })}
-				href="https://github.com/diegoramoz/wireframe"
+				href="https://github.com/ramosdiegocom/wireframe"
 				rel="noopener noreferrer"
 				target="_blank"
 			>
