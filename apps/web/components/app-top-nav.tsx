@@ -19,7 +19,7 @@ export function AppTopNav() {
 			<div className="flex items-center gap-1">
 				<a
 					className="rounded-md px-3 py-2 transition-colors hover:bg-muted"
-					href="https://www.youtube.com/watch?v=x70d_rH55J8"
+					href="https://www.youtube.com/@ramosdiegocom"
 					rel="noopener noreferrer"
 					target="_blank"
 				>

@@ -13,7 +13,7 @@ import type React from "react";
 const links = [
 	{
 		label: "YouTube",
-		href: "https://www.youtube.com/watch?v=x70d_rH55J8",
+		href: "https://www.youtube.com/@ramosdiegocom",
 		external: true,
 		icon: SiYoutube,
 	},
